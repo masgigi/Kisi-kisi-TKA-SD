@@ -1,0 +1,1426 @@
+/* =========================================================
+   MPI KELILING & LUAS LINGKARAN SD
+   RESPONSIVE UNTUK IFP / PID / TABLET / HP
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eef4f8;
+    color: #12304a;
+    overflow: hidden;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+
+/* =========================================================
+   APP
+   ========================================================= */
+
+.app {
+    width: 100%;
+    height: 100dvh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+    height: clamp(65px, 8vh, 90px);
+
+    flex-shrink: 0;
+
+    padding:
+        clamp(8px, 1.5vw, 18px)
+        clamp(12px, 2.5vw, 35px);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background:
+        linear-gradient(
+            135deg,
+            #12304a,
+            #1677c8
+        );
+
+    color: white;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.18);
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.brand {
+    display: flex;
+    align-items: center;
+
+    gap: clamp(8px, 1vw, 15px);
+
+    min-width: 0;
+}
+
+
+.logo {
+    width: clamp(40px, 5vw, 58px);
+    height: clamp(40px, 5vw, 58px);
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 15px;
+
+    background: white;
+
+    color: #1677c8;
+
+    font-size: clamp(23px, 3vw, 34px);
+
+    font-weight: bold;
+}
+
+
+.brand h1 {
+    margin: 0;
+
+    font-size: clamp(17px, 2.2vw, 28px);
+
+    line-height: 1.1;
+}
+
+
+.brand p {
+    margin: 4px 0 0;
+
+    font-size: clamp(10px, 1.2vw, 15px);
+
+    opacity: 0.85;
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+.progress-container {
+    width: clamp(90px, 18vw, 260px);
+
+    flex-shrink: 0;
+}
+
+
+.progress {
+    width: 100%;
+
+    height: clamp(7px, 1vw, 12px);
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.25);
+}
+
+
+#progressBar {
+    width: 14%;
+    height: 100%;
+
+    border-radius: 20px;
+
+    background: white;
+
+    transition:
+        width 0.35s ease;
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+main {
+    flex: 1;
+
+    min-height: 0;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SLIDE
+   ========================================================= */
+
+.slide {
+    display: none;
+
+    width: 100%;
+    height: 100%;
+
+    padding:
+        clamp(15px, 2.5vw, 35px);
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    animation:
+        slideIn 0.3s ease;
+}
+
+
+.slide.active {
+    display: block;
+}
+
+
+@keyframes slideIn {
+
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: clamp(15px, 3vw, 40px);
+
+    align-items: center;
+}
+
+
+.hero h2 {
+    margin: 15px 0;
+
+    font-size:
+        clamp(28px, 4vw, 52px);
+
+    line-height: 1.15;
+}
+
+
+.hero p {
+    font-size:
+        clamp(15px, 1.7vw, 22px);
+
+    line-height: 1.6;
+}
+
+
+.hero ul {
+    padding-left: 25px;
+
+    font-size:
+        clamp(15px, 1.6vw, 21px);
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.card {
+    background: white;
+
+    border-radius:
+        clamp(15px, 2vw, 25px);
+
+    padding:
+        clamp(18px, 2.5vw, 32px);
+
+    box-shadow:
+        0 10px 30px
+        rgba(18, 48, 74, 0.12);
+}
+
+
+.card h3 {
+    margin-top: 0;
+
+    font-size:
+        clamp(19px, 2vw, 27px);
+}
+
+
+.card p {
+    font-size:
+        clamp(15px, 1.6vw, 20px);
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   BADGE
+   ========================================================= */
+
+.badge {
+    display: inline-block;
+
+    padding:
+        clamp(6px, 1vw, 10px)
+        clamp(10px, 1.4vw, 16px);
+
+    border-radius: 30px;
+
+    background: #e4f3ff;
+
+    color: #1265a4;
+
+    font-size:
+        clamp(11px, 1.2vw, 15px);
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   CIRCLE
+   ========================================================= */
+
+.circle-card {
+    text-align: center;
+}
+
+
+.big-circle {
+    position: relative;
+
+    width:
+        min(
+            32vw,
+            38vh,
+            360px
+        );
+
+    aspect-ratio: 1;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    border:
+        clamp(10px, 1.5vw, 18px)
+        solid #1677c8;
+
+    background:
+        radial-gradient(
+            circle,
+            #ffffff 0%,
+            #e9f6ff 100%
+        );
+}
+
+
+.big-circle::after {
+    content: "";
+
+    position: absolute;
+
+    width: clamp(12px, 1.5vw, 18px);
+    height: clamp(12px, 1.5vw, 18px);
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: #12304a;
+}
+
+
+.radius-line {
+    position: absolute;
+
+    width: 43%;
+
+    height:
+        clamp(3px, .5vw, 6px);
+
+    left: 50%;
+    top: 50%;
+
+    transform-origin: left center;
+
+    background: #f39a32;
+
+    border-radius: 10px;
+}
+
+
+.radius-label {
+    position: absolute;
+
+    left: 68%;
+    top: 42%;
+
+    color: #bd6c0b;
+
+    font-size:
+        clamp(20px, 3vw, 30px);
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.section-title {
+    margin:
+        5px 0
+        clamp(15px, 2vw, 28px);
+
+    text-align: center;
+
+    font-size:
+        clamp(24px, 3vw, 38px);
+}
+
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.grid-3 {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap:
+        clamp(12px, 1.8vw, 25px);
+
+    max-width: 1250px;
+
+    margin: auto;
+}
+
+
+.grid-3 .card {
+    min-height:
+        clamp(170px, 25vh, 270px);
+}
+
+
+/* =========================================================
+   ICON
+   ========================================================= */
+
+.icon {
+    font-size:
+        clamp(32px, 4vw, 50px);
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   FORMULA
+   ========================================================= */
+
+.formula {
+    margin-top: 15px;
+
+    padding:
+        clamp(12px, 1.5vw, 18px);
+
+    border-left:
+        clamp(5px, .6vw, 8px)
+        solid #1677c8;
+
+    border-radius: 10px;
+
+    background: #eaf6ff;
+
+    font-size:
+        clamp(18px, 2.2vw, 28px);
+
+    font-weight: bold;
+
+    text-align: center;
+}
+
+
+.formula.large {
+    margin: 20px auto;
+
+    max-width: 800px;
+
+    padding:
+        clamp(15px, 2vw, 23px);
+
+    font-size:
+        clamp(23px, 3vw, 35px);
+}
+
+
+/* =========================================================
+   INFO
+   ========================================================= */
+
+.info-box {
+    max-width: 1050px;
+
+    margin:
+        clamp(15px, 2vw, 25px)
+        auto 0;
+
+    padding:
+        clamp(13px, 1.5vw, 20px);
+
+    border-left:
+        clamp(5px, .6vw, 8px)
+        solid #f39a32;
+
+    border-radius: 12px;
+
+    background: #fff5df;
+
+    font-size:
+        clamp(15px, 1.5vw, 20px);
+
+    line-height: 1.6;
+}
+
+
+.note-box {
+    margin: 25px 0;
+
+    padding:
+        clamp(13px, 1.5vw, 20px);
+
+    border-radius: 12px;
+
+    background: #f2f7fa;
+
+    font-size:
+        clamp(14px, 1.4vw, 19px);
+
+    line-height: 1.6;
+}
+
+
+.answer-box {
+    margin-top: 15px;
+
+    padding:
+        clamp(15px, 2vw, 22px);
+
+    border-radius: 14px;
+
+    background: #e4f8ed;
+
+    color: #08764c;
+
+    font-size:
+        clamp(20px, 2.5vw, 30px);
+
+    font-weight: bold;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.content-card {
+    width: 100%;
+
+    max-width: 1050px;
+
+    margin: auto;
+}
+
+
+.content-card ul {
+    font-size:
+        clamp(15px, 1.6vw, 21px);
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+table {
+    width: 100%;
+
+    margin-top: 20px;
+
+    border-collapse: collapse;
+
+    font-size:
+        clamp(14px, 1.5vw, 20px);
+
+    text-align: center;
+}
+
+
+th,
+td {
+    padding:
+        clamp(9px, 1vw, 14px);
+
+    border-bottom:
+        1px solid #dce5ea;
+}
+
+
+th {
+    color: white;
+
+    background: #1677c8;
+}
+
+
+tr:nth-child(even) {
+    background: #f5f9fb;
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height:
+        clamp(48px, 7vh, 68px);
+
+    padding:
+        12px
+        clamp(17px, 2vw, 28px);
+
+    border: 0;
+
+    border-radius:
+        clamp(11px, 1.5vw, 17px);
+
+    color: white;
+
+    background: #1677c8;
+
+    font-size:
+        clamp(15px, 1.5vw, 21px);
+
+    font-weight: bold;
+
+    box-shadow:
+        0 5px 0 #0d5d9e;
+
+    transition:
+        transform 0.1s,
+        box-shadow 0.1s;
+}
+
+
+.btn:hover {
+    filter: brightness(1.08);
+}
+
+
+.btn:active {
+    transform: translateY(3px);
+
+    box-shadow:
+        0 2px 0 #0d5d9e;
+}
+
+
+.btn.green {
+    background: #16a36b;
+
+    box-shadow:
+        0 5px 0 #08764c;
+}
+
+
+.btn.orange {
+    background: #f39a32;
+
+    box-shadow:
+        0 5px 0 #bd6c0b;
+}
+
+
+.btn.gray {
+    background: #647687;
+
+    box-shadow:
+        0 5px 0 #455664;
+}
+
+
+/* =========================================================
+   NAVIGASI
+   ========================================================= */
+
+.navigation {
+    height:
+        clamp(65px, 9vh, 90px);
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding:
+        8px
+        clamp(12px, 2.5vw, 30px);
+
+    background: white;
+
+    box-shadow:
+        0 -3px 12px
+        rgba(0, 0, 0, 0.08);
+
+    z-index: 10;
+}
+
+
+.page-number {
+    font-size:
+        clamp(14px, 1.5vw, 20px);
+
+    font-weight: bold;
+
+    color: #647687;
+}
+
+
+/* =========================================================
+   KUIS
+   ========================================================= */
+
+.quiz-instruction {
+    max-width: 850px;
+
+    margin:
+        0 auto 20px;
+
+    text-align: center;
+
+    font-size:
+        clamp(15px, 1.6vw, 21px);
+}
+
+
+.teams {
+    display: flex;
+
+    justify-content: center;
+
+    gap:
+        clamp(10px, 2vw, 22px);
+
+    margin:
+        15px auto;
+
+    max-width: 900px;
+}
+
+
+.team {
+    flex: 1;
+
+    padding:
+        clamp(10px, 1.5vw, 18px);
+
+    border-radius: 18px;
+
+    background: white;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 25px
+        rgba(18, 48, 74, 0.12);
+}
+
+
+.team h3 {
+    margin: 0;
+
+    font-size:
+        clamp(17px, 2vw, 25px);
+}
+
+
+.team-a {
+    border-top:
+        clamp(5px, .8vw, 8px)
+        solid #1677c8;
+}
+
+
+.team-b {
+    border-top:
+        clamp(5px, .8vw, 8px)
+        solid #16a36b;
+}
+
+
+.score {
+    margin-top: 5px;
+
+    font-size:
+        clamp(30px, 4vw, 48px);
+
+    font-weight: bold;
+}
+
+
+.team span {
+    color: #647687;
+
+    font-size:
+        clamp(11px, 1.1vw, 14px);
+}
+
+
+/* =========================================================
+   QUIZ CARD
+   ========================================================= */
+
+.quiz-card {
+    width: 100%;
+
+    max-width: 950px;
+
+    margin: 20px auto;
+
+    text-align: center;
+}
+
+
+.turn {
+    display: inline-block;
+
+    padding:
+        10px 18px;
+
+    border-radius: 25px;
+
+    background: #eaf6ff;
+
+    color: #1265a4;
+
+    font-size:
+        clamp(14px, 1.5vw, 19px);
+
+    font-weight: bold;
+}
+
+
+.question {
+    min-height: 70px;
+
+    margin:
+        22px 0;
+
+    font-size:
+        clamp(21px, 2.7vw, 32px);
+
+    line-height: 1.4;
+
+    font-weight: bold;
+}
+
+
+.choices {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        clamp(10px, 1.5vw, 16px);
+}
+
+
+.choice {
+    min-height:
+        clamp(55px, 8vh, 75px);
+
+    padding:
+        clamp(12px, 1.5vw, 20px);
+
+    border:
+        3px solid #dce7ee;
+
+    border-radius:
+        clamp(12px, 1.5vw, 17px);
+
+    background: #f8fbfd;
+
+    color: #12304a;
+
+    font-size:
+        clamp(16px, 1.7vw, 22px);
+
+    font-weight: bold;
+
+    transition:
+        transform 0.15s,
+        background 0.15s;
+}
+
+
+.choice:hover {
+    transform: scale(1.02);
+
+    background: #eaf6ff;
+
+    border-color: #1677c8;
+}
+
+
+.choice:disabled {
+    cursor: default;
+}
+
+
+.choice.correct {
+    background: #dff7ea;
+
+    border-color: #16a36b;
+
+    color: #08764c;
+}
+
+
+.choice.wrong {
+    background: #ffe4e4;
+
+    border-color: #e55353;
+
+    color: #a62626;
+}
+
+
+.feedback {
+    min-height: 35px;
+
+    margin:
+        15px 0;
+
+    font-size:
+        clamp(16px, 1.6vw, 21px);
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   HIDDEN
+   ========================================================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================================
+   SLIDE AKHIR
+   ========================================================= */
+
+.end-card {
+    width: 100%;
+
+    max-width: 850px;
+
+    margin:
+        clamp(20px, 7vh, 70px)
+        auto;
+
+    text-align: center;
+}
+
+
+.end-card h2 {
+    font-size:
+        clamp(30px, 4vw, 48px);
+}
+
+
+.end-card p {
+    font-size:
+        clamp(16px, 1.8vw, 22px);
+}
+
+
+.trophy {
+    font-size:
+        clamp(50px, 7vw, 80px);
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   TABLET / IPAD / LAYAR SEDANG
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+
+    .hero .card {
+        max-width: 900px;
+        width: 100%;
+        margin: auto;
+    }
+
+
+    .big-circle {
+        width: min(45vw, 280px);
+    }
+
+
+    .grid-3 {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   HP
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    body {
+        overflow: hidden;
+    }
+
+
+    .header {
+        height: 62px;
+    }
+
+
+    .brand p {
+        display: none;
+    }
+
+
+    .progress-container {
+        width: 80px;
+    }
+
+
+    .slide {
+        padding: 12px;
+    }
+
+
+    .hero {
+        gap: 12px;
+    }
+
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+
+    .hero ul {
+        line-height: 1.55;
+    }
+
+
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+
+    .grid-3 .card {
+        min-height: auto;
+    }
+
+
+    .big-circle {
+        width: min(55vw, 210px);
+    }
+
+
+    .section-title {
+        font-size: 25px;
+    }
+
+
+    .choices {
+        grid-template-columns: 1fr;
+    }
+
+
+    .question {
+        font-size: 20px;
+    }
+
+
+    .choice {
+        min-height: 52px;
+    }
+
+
+    .teams {
+        gap: 8px;
+    }
+
+
+    .team h3 {
+        font-size: 16px;
+    }
+
+
+    .score {
+        font-size: 30px;
+    }
+
+
+    .navigation {
+        height: 62px;
+    }
+
+
+    .navigation .btn {
+        min-height: 44px;
+        padding: 8px 13px;
+    }
+
+
+    .page-number {
+        font-size: 13px;
+    }
+
+}
+
+
+/* =========================================================
+   HP SANGAT KECIL
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .brand h1 {
+        font-size: 15px;
+    }
+
+
+    .progress-container {
+        width: 60px;
+    }
+
+
+    .card {
+        padding: 15px;
+    }
+
+
+    .hero h2 {
+        font-size: 24px;
+    }
+
+
+    .hero p,
+    .card p {
+        font-size: 14px;
+    }
+
+
+    .formula {
+        font-size: 18px;
+    }
+
+
+    .formula.large {
+        font-size: 20px;
+    }
+
+
+    .section-title {
+        font-size: 22px;
+    }
+
+
+    .btn {
+        font-size: 14px;
+    }
+
+}
+
+
+/* =========================================================
+   MODE LANDSCAPE HP
+   ========================================================= */
+
+@media (max-height: 550px) and (orientation: landscape) {
+
+    .header {
+        height: 55px;
+    }
+
+
+    .navigation {
+        height: 55px;
+    }
+
+
+    .slide {
+        padding: 10px 18px;
+    }
+
+
+    .hero {
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 15px;
+    }
+
+
+    .hero h2 {
+        font-size: 25px;
+    }
+
+
+    .hero p {
+        font-size: 14px;
+    }
+
+
+    .hero ul {
+        font-size: 13px;
+        line-height: 1.35;
+    }
+
+
+    .big-circle {
+        width: 180px;
+    }
+
+
+    .card {
+        padding: 15px;
+    }
+
+
+    .grid-3 {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+
+    .section-title {
+        font-size: 23px;
+        margin-bottom: 10px;
+    }
+
+
+    .quiz-card {
+        margin: 10px auto;
+    }
+
+
+    .question {
+        margin: 10px 0;
+        font-size: 18px;
+    }
+
+
+    .choice {
+        min-height: 45px;
+        padding: 9px;
+        font-size: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   IFP / PID BESAR
+   1280px KE ATAS
+   ========================================================= */
+
+@media (min-width: 1280px) {
+
+    .slide {
+        padding:
+            30px 45px;
+    }
+
+
+    .card {
+        border-radius: 25px;
+    }
+
+
+    .hero {
+        max-width: 1450px;
+        margin: auto;
+    }
+
+
+    .grid-3 {
+        max-width: 1350px;
+    }
+
+
+    .quiz-card {
+        max-width: 1100px;
+    }
+
+
+    .choice {
+        min-height: 80px;
+    }
+
+}
+
+
+/* =========================================================
+   IFP / PID FULL HD
+   ========================================================= */
+
+@media (
+    min-width: 1600px
+) and (
+    min-height: 850px
+) {
+
+    .brand h1 {
+        font-size: 30px;
+    }
+
+
+    .brand p {
+        font-size: 15px;
+    }
+
+
+    .section-title {
+        font-size: 40px;
+    }
+
+
+    .hero h2 {
+        font-size: 54px;
+    }
+
+
+    .hero p {
+        font-size: 22px;
+    }
+
+
+    .card p {
+        font-size: 21px;
+    }
+
+
+    .choice {
+        min-height: 90px;
+
+        font-size: 24px;
+    }
+
+
+    .question {
+        font-size: 34px;
+    }
+
+}
+
+
+/* =========================================================
+   MENCEGAH SELEKSI TEKS SAAT PRESENTASI
+   ========================================================= */
+
+.logo,
+.btn,
+.choice,
+.team,
+.badge,
+.turn {
+    user-select: none;
+    -webkit-user-select: none;
+}
