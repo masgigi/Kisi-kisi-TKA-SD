@@ -1,70 +1,60 @@
-# 📚 MPI TKA
+# 📚 Kisi-kisi TKA SD
 
-**Media Pembelajaran Interaktif Tes Kemampuan Akademik (TKA)** untuk jenjang **SD dan SMP**.
+**Media pembelajaran interaktif untuk membantu siswa Sekolah Dasar mempelajari materi Tes Kemampuan Akademik (TKA).**
 
-MPI TKA merupakan kumpulan **rangkuman materi Tes Kemampuan Akademik (TKA)** yang dikemas dalam bentuk **multimedia pembelajaran interaktif** dan dirancang untuk digunakan pada perangkat **IFP (Interactive Flat Panel)** maupun **HO**.
+Repository ini berisi rangkuman dan media belajar interaktif yang diarahkan khusus untuk jenjang **SD**, dengan tampilan yang dapat digunakan melalui HP, komputer/laptop, tablet, maupun Interactive Flat Panel (IFP).
 
 ## 🎯 Tujuan
 
-Membantu guru dan peserta didik mempelajari materi TKA dengan cara yang lebih **interaktif, menarik, dan mudah dipahami**, baik dalam pembelajaran di kelas maupun belajar mandiri.
+Membantu guru dan siswa mempelajari serta mengulas materi TKA dengan cara yang lebih interaktif, mudah digunakan, dan sesuai kebutuhan pembelajaran di sekolah maupun belajar mandiri.
 
 ## ✨ Fitur
 
-* 📖 Materi berupa rangkuman TKA untuk jenjang **SD dan SMP**
-* 🎯 Disusun sesuai **kisi-kisi resmi Kemendikdasmen**
-* 🖱️ Media pembelajaran **interaktif**
-* 🖥️ Mendukung penggunaan pada **IFP maupun HO**
-* 📱 Dapat digunakan melalui browser pada berbagai perangkat
-* 🚀 Tidak memerlukan instalasi aplikasi tambahan
+- 📖 Rangkuman materi TKA jenjang SD
+- 🎯 Materi mengacu pada kisi-kisi TKA yang berlaku
+- 🧮 Materi Matematika
+- 📚 Materi Bahasa Indonesia
+- 🖥️ Mode tampilan untuk IFP/IPD
+- 📱 Mode tampilan untuk HP
+- 🌐 Berjalan langsung melalui browser
+- 🚀 Tidak memerlukan instalasi aplikasi tambahan
 
-## 🌐 Cara Menggunakan
+## 🌐 Akses
 
-Silakan buka halaman utama MPI TKA:
+Jika GitHub Pages telah diaktifkan, aplikasi dapat diakses melalui:
 
-👉 **https://nirsinggih.github.io/mpi-tka/index.html**
+**https://masgigi.github.io/Kisi-kisi-TKA-SD/**
 
-Kemudian pilih **menu materi yang tersedia** sesuai jenjang dan kebutuhan pembelajaran.
+Repository:
+
+**https://github.com/masgigi/Kisi-kisi-TKA-SD**
 
 ## 🛠️ Teknologi
 
-Proyek ini dikembangkan menggunakan teknologi web:
+- HTML5
+- CSS3
+- JavaScript
+- Tailwind CSS pada halaman utama
 
-* **HTML5**
-* **CSS3**
-* **JavaScript**
+## 👨‍🏫 Pengembangan
 
-Tidak memerlukan framework atau aplikasi khusus untuk menjalankannya.
+Versi ini dimodifikasi dan dikembangkan untuk kebutuhan pembelajaran SD oleh:
 
-## 🖥️ Platform
+**Igigih Budi Pradana, S. Pd., Gr.**  
+Guru Sekolah Dasar
 
-MPI TKA dapat digunakan pada:
+## 📌 Catatan sumber dan atribusi
 
-* 🖥️ Komputer/Laptop
-* 📱 Smartphone
-* 📲 Tablet
-* 🖥️ Interactive Flat Panel (**IFP**)
-* 🖥️ HO / perangkat display pembelajaran
+Proyek ini dikembangkan berdasarkan repository **MPI TKA** karya **Nir Singgih / Nirsinggih**. Repository sumber menyatakan penggunaan **Free for Education**. Materi dan struktur awal kemudian disalin ke repository independen ini untuk dimodifikasi dan difokuskan pada kebutuhan pembelajaran TKA jenjang SD.
 
-Selama perangkat memiliki browser yang mendukung teknologi HTML, CSS, dan JavaScript.
+Sumber awal:
 
-## 📜 Lisensi
+**https://github.com/nirsinggih/mpi-tka**
 
-**Free for Education**
-
-Proyek ini dapat digunakan secara **gratis untuk keperluan pendidikan**.
-
-## 📬 Kontak
-
-Jika memiliki pertanyaan, saran, atau masukan mengenai MPI TKA, silakan menghubungi:
-
-**Nirsinggih**
-📧 [nirsinggih@gmail.com](mailto:nirsinggih@gmail.com)
+Atribusi ini dipertahankan sebagai penghargaan terhadap pengembang proyek awal.
 
 ---
 
-### ❤️ Untuk Pendidikan Indonesia
+> Teknologi dapat membantu guru membuat kegiatan belajar lebih mudah diakses, interaktif, dan bermakna.
 
-> *Belajar tidak harus selalu dengan buku cetak.
-> Teknologi dapat menjadi jembatan untuk membuat pembelajaran lebih menarik, interaktif, dan bermakna.*
-
-**MPI TKA — Belajar TKA dengan cara yang lebih interaktif.**
+**Kisi-kisi TKA SD — Belajar, berlatih, dan memahami.**
